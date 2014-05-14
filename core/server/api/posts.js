@@ -95,7 +95,7 @@ posts = {
         if (!this.user) {
             return when.reject({code: 403, message: 'You do not have permission to add posts.'});
         }
-
+        postData.actionCaller = this.user;
         return canThis(this.user).create.post().then(function () {
             return dataProvider.Post.add(postData);
         }, function () {
