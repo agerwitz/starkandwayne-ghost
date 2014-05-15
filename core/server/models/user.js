@@ -96,7 +96,7 @@ User = ghostBookshelf.Model.extend({
         }).then(function (user) {
             // Check if user exists
             if (user) {
-                //return when.reject(new Error('A user is already registered. Only one user for now!'));
+                return when.reject(new Error('A user is already registered. Only one user for now!'));
             }
         }).then(function () {
             // Generate a new password hash
